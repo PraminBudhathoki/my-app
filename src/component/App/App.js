@@ -4,7 +4,7 @@ export default function App() {
   const Name = "Company Name";
   return (
     <div className="App">
-      <Header company={Name} title="Hard-Coded" />
+      <Header company={Name} />
     </div>
   );
 }
