@@ -1,9 +1,13 @@
 import "./searchbar.css";
+import { useState } from "react";
 
 export default function SearchBar(props) {
+  // const [myprop, setMyProp] = useState("default value");
+
   function submitted(event) {
     event.preventDefault();
     console.log("submitted");
+    // setMyProp(event.target["keyword"].value);
   }
   function focused(event) {
     console.log("Focused");
@@ -35,6 +39,7 @@ export default function SearchBar(props) {
           Submit
         </button>
       </form>
+      <p>{myprop}</p>
     </section>
   );
 }
