@@ -1,9 +1,16 @@
 import "./searchbar.css";
+// import { useState } from "react";
 
 export default function SearchBar(props) {
+  // const [term, setTerm] = useState("");
+  // const [myprop, setMyProp] = useState("default value");
+
   function submitted(event) {
     event.preventDefault();
     console.log("submitted");
+    props.addTerm(event.target["keyword"].value);
+    // setMyProp(event.target["keyword"].value);
+    // setTerm(event.target["keyword"].value);
   }
   function focused(event) {
     console.log("Focused");
@@ -35,6 +42,9 @@ export default function SearchBar(props) {
           Submit
         </button>
       </form>
+      {props.term ? <p>You searched for {props.term}</p> : ""}
+
+      {/* <p>{term}</p> */}
     </section>
   );
 }
