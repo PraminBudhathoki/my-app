@@ -12,16 +12,16 @@ export default function SearchBar(props) {
     // setMyProp(event.target["keyword"].value);
     // setTerm(event.target["keyword"].value);
   }
-  function focused(event) {
-    console.log("Focused");
-  }
-  function changed(event) {
-    console.log("oninput", event.target.value);
-  }
-  function clicked(event) {
-    // event.preventDefault();
-    console.log("Clicked");
-  }
+  // function focused(event) {
+  //   console.log("Focused");
+  // }
+  // function changed(event) {
+  //   console.log("oninput", event.target.value);
+  // }
+  // function clicked(event) {
+  //   // event.preventDefault();
+  //   console.log("Clicked");
+  // }
   return (
     <section className="searchBar">
       <form onSubmit={submitted}>
@@ -30,21 +30,24 @@ export default function SearchBar(props) {
           name="keyword"
           className="searchtext"
           placeholder="keyword"
-          onFocus={focused}
-          onInput={(event) => changed(event)}
+          // onFocus={focused}
+          // onInput={(event) => changed(event)}
         />
         <button
           type="submit"
           className="searchBtn"
           name="searchBtn"
-          onClick={clicked}
+          // onClick={clicked}
         >
           Submit
         </button>
       </form>
-      {props.term ? <p>You searched for {props.term}</p> : ""}
-
+      {props.term && <p>You searched for {props.term}</p>}
       {/* <p>{term}</p> */}
     </section>
   );
+}
+
+{
+  /* {props.term ? <p>You searched for {props.term}</p> : ""} */
 }
